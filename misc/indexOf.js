@@ -8,5 +8,6 @@ const indexOf = (arr, n) => {
   return -1;
 }
 
+
 console.log(indexOf([1, 2, 3, 4], 5)) // -1
 console.log(indexOf([1, 2, 3, 4], 3)) // 2
