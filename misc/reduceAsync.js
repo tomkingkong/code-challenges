@@ -1,13 +1,15 @@
 // Like the reduce you implemented in the Easy section, 
 // but each item must be resolved before continuing onto the next.
 
-const reduceAsync = async (arr, callback, init) => {
+const reduceAsync = async (array, callback, init) => {
   let start = 0;
   
   if (init === 0) {
     init = arr[0];
     start = 1;
   }
+
+  let arr = await Promise.all(array.map(a => a()))
 
   for (let i=start; i<arr.length; i++) {
     init = callback(init, arr[i]);
@@ -29,7 +31,5 @@ const runAsync = async () => {
   console.log(exampleA)
   console.log(exampleB)
 }
-
-console.log(a);
 
 runAsync();
