@@ -29,7 +29,7 @@ const debounce = async (fn, wait) => {
   });
 }
 
-const yell = () =>  'aaaaaaaah'
+const yell = () => 'aaaaaaaah'
 
 
 const send = async () => {
