@@ -2,24 +2,19 @@
 // the character that is most commonly used in the string
 
 const maxChar = str => {
-  const index = {};
-  let highest = 0;
-  let maxChar = null;
+  const charMap = {};
+  let max = null;
   
-  // iterate through array
-  for (let char of str) {
-    // add character to index and add 1
-    // add 1 to char already in index
-    index[char] = index[char] + 1 || 1;
-    // compare highest to index[char]
-    // replace highest if new char occured more
-    if (index[char] > highest) {
-      maxChar = char;
-      highest = index[char];
-    };
+  for (const char of str) {
+    // add character to charMap and set to 1
+    // or add 1 to char in charMap
+    charMap[char] = charMap[char] + 1 || 1;
+    // compare max to charMap[char]
+    // replace max if new char occured more
+    !max || charMap[char] > charMap[max] ? max = char : null;
   }
 
-  return maxChar;
+  return max;
 }
 
 console.log(maxChar('heelo')) // e
